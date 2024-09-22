@@ -1,0 +1,344 @@
+/* App.css */
+
+/* Global Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ECF0F1;
+  /* Light mode background */
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Main App Container */
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* Ensures full height */
+}
+
+/* Header Styles */
+.header {
+  background-color: #2C3E50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header nav ul li a:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #2C3E50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Home Page Styles */
+.home {
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  background-color: #ECF0F1;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input,
+form select {
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form input[type="file"] {
+  padding: 0;
+}
+
+form button {
+  background-color: #3498DB;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+/* Player Cards Container */
+.player-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Two cards per row */
+}
+
+/* Player Card Styles */
+.player-card {
+  flex: 0 1 calc(48% - 20px);
+  /* Adjusted to fit two cards with margin */
+  margin: 10px;
+  max-width: calc(48% - 20px);
+  /* Prevent overflow */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.player-info {
+  text-align: center;
+  padding: 1rem;
+}
+
+.player-image {
+  width: 100%;
+  max-width: 120px;
+  /* Make image smaller */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.player-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button {
+  background-color: #3498DB;
+  color: white;
+}
+
+.delete-button {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  opacity: 0.9;
+}
+
+.player-card-link {
+  display: block;
+  /* Ensure it takes up the full space */
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Inherit text color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .player-card {
+    flex: 0 1 calc(100% - 20px);
+    /* Stack on smaller screens */
+    max-width: 100%;
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  /* Dark background */
+  color: #ffffff;
+  /* Light text */
+}
+
+.dark-mode body {
+  background-color: #121212;
+  /* Ensure body background changes */
+}
+
+.dark-mode .player-card {
+  background-color: #1e1e1e;
+  /* Darker card background */
+  border: 1px solid #333;
+}
+
+/* Custom Styling for Image Links */
+.image-link {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Pagination Buttons */
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-bar {
+  width: 100%;
+  /* Full width */
+  max-width: 600px;
+  /* Maximum width */
+  padding: 12px;
+  /* Increased padding for better UX */
+  margin: 20px auto;
+  /* Center the input */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  /* Adjust font size */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Optional shadow */
+}
+
+.player-list-container {
+  text-align: center;
+  /* Center align the content */
+}
+
+/* Add Player Styles */
+.add-player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center horizontally */
+  justify-content: center;
+  /* Center vertically */
+  min-height: 100vh;
+  /* Full height */
+  padding: 1rem;
+}
+
+.add-player-container h1 {
+  text-align: center;
+  /* Center the title */
+}
+
+.add-player-container form {
+  width: 100%;
+  /* Full width */
+  max-width: 400px;
+  /* Set a max width */
+  margin: 20px auto;
+  /* Center form */
+  padding: 20px;
+  /* Inner padding */
+  border: 1px solid #ccc;
+  /* Border for the form */
+  border-radius: 8px;
+  /* Rounded corners */
+  background-color: #f9f9f9;
+  /* Light background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Shadow for depth */
+}
+
+.add-player-container div {
+  width: 100%;
+  /* Make each div take the full width */
+  margin: 10px 0;
+  /* Add some space between fields */
+  text-align: left;
+  /* Align text to the left */
+}
+
+.add-player-container input {
+  width: 100%;
+  /* Make input fields take the full width of their container */
+  padding: 10px;
+  /* Padding for inputs */
+  border: 1px solid #ccc;
+  /* Border for inputs */
+  border-radius: 5px;
+  /* Rounded corners */
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+}
+
+.add-player-container button {
+  width: 100%;
+  /* Full width for button */
+  background-color: #3498DB;
+  /* Button color */
+  color: white;
+  /* Button text color */
+  border: none;
+  /* No border */
+  padding: 10px;
+  /* Padding for button */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s;
+  /* Transition for hover effect */
+}
+
+.add-player-container button:hover {
+  background-color: #2980B9;
+  /* Darker on hover */
+}
